@@ -1,0 +1,9 @@
+.app-container {
+  width: 1194px;
+  height: 834px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  overflow: hidden;
+  transform-origin: center center;
+}

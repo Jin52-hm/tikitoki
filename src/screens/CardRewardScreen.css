@@ -1,0 +1,66 @@
+.card-reward {
+  width: 1194px;
+  height: 834px;
+  position: relative;
+  cursor: pointer;
+  background: #000;
+}
+
+.reward-bg {
+  position: absolute;
+  left: -223px;
+  top: 51px;
+  width: 1417px;
+  height: 797px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.reward-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.reward-card {
+  position: absolute;
+  left: 461px;
+  top: 230px;
+  width: 272px;
+  height: 287px;
+  background: #d9d9d9;
+  border-radius: 16px;
+  box-shadow: 0 0 100px 0 var(--yellow);
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reward-card p {
+  font-family: var(--font);
+  font-size: 28px;
+  color: black;
+  text-align: center;
+}
+
+.reward-label {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 578px;
+  background: var(--bg-yellow);
+  border: 10px solid var(--yellow);
+  border-radius: 999px;
+  padding: 20px 50px;
+  z-index: 5;
+  white-space: nowrap;
+}
+
+.reward-label p {
+  font-family: var(--font);
+  font-size: 32px;
+  color: var(--green);
+  text-align: center;
+}

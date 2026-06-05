@@ -1,0 +1,74 @@
+.activity-listen {
+  width: 1194px;
+  height: 834px;
+  position: relative;
+  cursor: pointer;
+  background: white;
+}
+
+.listen-bg {
+  position: absolute;
+  left: -172px;
+  bottom: 0;
+  width: 1537px;
+  height: 865px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.listen-status-bar {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  width: 1194px;
+  height: 79px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.listen-status-bar p {
+  font-family: var(--font);
+  font-size: 32px;
+  color: #d7d7d7;
+  text-align: center;
+}
+
+.listen-item {
+  position: absolute;
+  left: 407px;
+  top: 227px;
+  width: 379px;
+  height: 379px;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.listen-word-pill {
+  position: absolute;
+  left: 511px;
+  top: 630px;
+  width: 174px;
+  height: 110px;
+  background: white;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.listen-word-big {
+  font-family: var(--font);
+  font-size: 64px;
+  color: black;
+  letter-spacing: 6.4px;
+}
+
+.listen-word-small {
+  font-family: var(--font);
+  font-size: 48px;
+  color: black;
+}

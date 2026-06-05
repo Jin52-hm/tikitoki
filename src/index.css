@@ -1,0 +1,40 @@
+@font-face {
+  font-family: 'Jalnan 2';
+  src: url('./assets/fonts/Jalnan2TTF.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --blue: #00d0d4;
+  --pink: #ff6bc5;
+  --yellow: #fec901;
+  --green: #00b686;
+  --bg-yellow: #fcf8b1;
+  --bg-pink: #ffe0fb;
+  --purple: #8c65be;
+  --stage-clear: #228284;
+  --font: 'Jalnan 2', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font);
+  background: #1a1a2e;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+
+#root {
+  width: 100%;
+  height: 100vh;
+}

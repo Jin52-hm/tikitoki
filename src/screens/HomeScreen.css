@@ -1,0 +1,158 @@
+.home {
+  width: 1194px;
+  height: 834px;
+  background: var(--bg-yellow);
+  position: relative;
+}
+
+.home-topbar {
+  position: absolute;
+  top: 26px;
+  left: 0px;
+  right: 0px;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 60px;
+
+  overflow: visible;
+}
+
+.home-badges {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.badge {
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: var(--yellow);
+  color: white;
+  font-family: var(--font);
+  font-size: 20px;
+  white-space: nowrap;
+}
+
+.home-logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.home-logo img {
+  height: 148px;
+  width: absolute;
+}
+
+.home-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btn-cards {
+  height: 70px;
+  padding: 0 30px;
+  border-radius: 999px;
+  background: var(--pink);
+  border: 4px solid white;
+  color: white;
+  font-family: var(--font);
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  white-space: nowrap;
+}
+
+.btn-parents {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--blue);
+  border: 4px solid white;
+  box-shadow: 0 4px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+.btn-parents img {
+  width: 40px;
+  height: 45px;
+}
+
+.btn-parents span {
+  font-family: var(--font);
+  font-size: 9px;
+  color: white;
+  white-space: nowrap;
+}
+
+.home-books {
+  position: absolute;
+  top: 250px;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  overflow-y: hidden;
+  gap: 20px;
+  padding: 20px 60px;
+  scroll-snap-type: x mandatory;
+}
+
+.book-card {
+  width: 387px;
+  height: 387px;
+  border-radius: 28px;
+  background: #d9d9d9;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.home-books::-webkit-scrollbar {
+  display: none;
+}
+
+.book-cover {
+  width: 100%;
+  height: 100%;
+  background: #d9d9d9;
+}
+
+.book-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 73px;
+  background: white;
+  border-radius: 0 0 28px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 32px;
+  box-shadow: 0 -4px 2px rgba(0,0,0,0.1);
+}
+
+.book-title span {
+  font-family: var(--font);
+  font-size: 28px;
+  color: black;
+  white-space: nowrap;
+}
+
+.book-level {
+  font-size: 24px !important;
+}

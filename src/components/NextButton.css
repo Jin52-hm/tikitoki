@@ -1,0 +1,53 @@
+.next-btn {
+  position: relative;
+  width: 190px;
+  height: 100px;
+  background: var(--pink, #ff6bc5);
+  border: 6px solid #ffffff;
+  border-radius: 1427px;
+  box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  animation: nextBtnPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+.next-btn:hover {
+  transform: scale(1.06);
+}
+
+.next-btn:active {
+  transform: scale(0.97);
+}
+
+.next-btn-label {
+  font-family: var(--font);
+  font-size: 40px;
+  color: #ffffff;
+  font-weight: normal;
+  white-space: nowrap;
+  line-height: normal;
+  margin-top: 6px;  /* 추가 */
+}
+
+.next-btn-arrow {
+  width: 42.857px;
+  height: 41.883px;
+  display: block;
+  flex-shrink: 0;
+}
+
+@keyframes nextBtnPop {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

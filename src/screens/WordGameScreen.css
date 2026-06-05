@@ -1,0 +1,278 @@
+.word-game {
+  width: 1194px;
+  height: 834px;
+  position: relative;
+  background: white;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* 배경 */
+.wg-bg {
+  position: absolute;
+  left: -172px;
+  bottom: 0;
+  width: 1537px;
+  height: 865px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+/* 안내 바 */
+.wg-info-bar {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  width: 1194px;
+  height: 79px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wg-info-bar p {
+  font-family: var(--font);
+  font-size: 32px;
+  color: #d7d7d7;
+  text-align: center;
+}
+
+/* 실패 상태 */
+.wg-info-bar.fail {
+  background: #b03030;
+}
+
+/* 사과 공통 */
+.wg-apple {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* 가르치기: 작고 흑백 */
+.wg-apple--sm {
+  width: 232px;
+  height: 232px;
+  top: 220px;
+  filter: grayscale(80%);
+  transition: filter 0.4s ease;
+}
+
+/* 듣기: 크고 흑백 */
+.wg-apple--lg {
+  width: 320px;
+  height: 320px;
+  top: 190px;
+  filter: grayscale(60%);
+  transition: transform 0.1s ease, filter 0.4s ease;
+}
+
+/* 성공 전환 */
+.wg-apple--to-success {
+  filter: grayscale(0%);
+  transform: translateX(-50%) scale(1.15);
+}
+
+/* 성공: 크고 컬러 */
+.wg-apple--success {
+  width: 380px;
+  height: 380px;
+  top: 160px;
+  filter: grayscale(0%) drop-shadow(0 8px 24px rgba(255,100,0,0.3));
+  animation: apple-pop 0.5s ease;
+}
+
+@keyframes apple-pop {
+  0%   { transform: translateX(-50%) scale(0.8); }
+  60%  { transform: translateX(-50%) scale(1.2); }
+  100% { transform: translateX(-50%) scale(1.0); }
+}
+
+/* 단어 pill */
+.wg-word-pill {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 140px;
+  width: 174px;
+  height: 110px;
+  background: white;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wg-word-big {
+  font-family: var(--font);
+  font-size: 64px;
+  color: black;
+  letter-spacing: 6.4px;
+}
+
+.wg-word-small {
+  font-family: var(--font);
+  font-size: 48px;
+  color: black;
+}
+
+/* 마이크 */
+.wg-mic-container {
+  position: absolute;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 3;
+  width: 200px;
+  height: 200px;
+}
+
+.wg-mic-ring {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 80px;
+  height: 80px;
+  margin: -40px 0 0 -40px;
+  border-radius: 50%;
+  background: rgba(255, 107, 197, 0.4);
+  animation: wg-ring-pulse 1.5s ease-out infinite;
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.wg-mic-ring:nth-child(2) {
+  animation-delay: 0.6s;
+}
+
+@keyframes wg-ring-pulse {
+  0%   { transform: scale(1); opacity: 0.8; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+.wg-mic-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--pink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  z-index: 2;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* 성공/패스 화면 배경 */
+.wg-success-bg {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 1366px;
+  height: 769px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.wg-success-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+/* 피드백 카드 (perfect / excellent / good) */
+.wg-feedback-card {
+  position: absolute;
+  left: 50%;
+  top: 336px;
+  transform: translateX(-50%);
+  width: 600px;
+  background: var(--bg-yellow);
+  border: 10px solid var(--yellow);
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 60px;
+  z-index: 3;
+  text-align: center;
+}
+
+/* pass 상태 - 더 넓고 중앙 배치 */
+.wg-feedback-card--pass {
+  width: 817px;
+  top: 300px;
+  gap: 20px;
+  padding: 50px 80px;
+}
+
+.wg-feedback-subtitle {
+  font-family: var(--font);
+  font-size: 24px;
+  color: black;
+}
+
+.wg-feedback-main {
+  font-family: var(--font);
+  font-size: 72px;
+  color: var(--green);
+  line-height: 1;
+}
+
+.wg-feedback-stars {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.wg-retry-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font);
+  font-size: 24px;
+  color: rgba(255,255,255,0.85);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.wg-pass-btn {
+  position: absolute;
+  right: 70px;
+  bottom: 45px;
+  width: 218px;
+  height: 80px;
+  background: #fd97d5;
+  border: 4.5px solid white;
+  border-radius: 999px;
+  box-shadow: 0 4.5px 4.5px rgba(0, 0, 0, 0.25);
+  font-family: var(--font);
+  font-size: 32px;
+  color: white;
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px;
+  animation: wg-pass-fadein 0.3s ease;
+}
+
+@keyframes wg-pass-fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

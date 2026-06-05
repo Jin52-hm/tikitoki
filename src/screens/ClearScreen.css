@@ -1,0 +1,81 @@
+.clear-screen {
+  width: 1194px;
+  height: 834px;
+  position: relative;
+  cursor: pointer;
+  background: #000;
+}
+
+.clear-bg {
+  position: absolute;
+  left: -86px;
+  top: 65px;
+  width: 1366px;
+  height: 769px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.clear-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  z-index: 1;
+}
+
+.clear-status-bar {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  width: 1194px;
+  height: 79px;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.clear-status-bar p {
+  font-family: var(--font);
+  font-size: 32px;
+  color: #d7d7d7;
+  text-align: center;
+}
+
+.clear-popup {
+  position: absolute;
+  left: 297px;
+  top: 314px;
+  width: 600px;
+  height: 271px;
+  background: var(--bg-yellow);
+  border: 10px solid var(--yellow);
+  border-radius: 999px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+  gap: 4px;
+}
+
+.clear-subtitle {
+  font-family: var(--font);
+  font-size: 24px;
+  color: black;
+  text-align: center;
+}
+
+.clear-title {
+  font-family: var(--font);
+  font-size: 72px;
+  color: var(--green);
+  text-align: center;
+}
+
+.clear-stars {
+  font-size: 48px;
+  text-align: center;
+}
