@@ -101,26 +101,17 @@
 }
 
 .story-ctrl-play {
-  width: 90px;
+  width: 91px;
   height: 125px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.story-ctrl-pause-icon {
-  display: flex;
-  gap: 16px;
-  align-items: center;
-}
-
-.story-ctrl-pause-icon span {
-  display: block;
-  width: 37px;
+.story-ctrl-icon {
+  width: 91px;
   height: 125px;
-  background: #fafafa;
-  border-radius: 8px;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);
+  object-fit: contain;
 }
 
 /* 일시정지 아이콘 */

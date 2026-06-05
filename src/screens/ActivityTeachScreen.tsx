@@ -5,7 +5,7 @@ export default function ActivityTeachScreen({ onHome, onNext }: { onHome: () => 
   return (
     <div className="activity-teach" onClick={onNext}>
       <img className="act-bg" src="/assets/forest-bg.png" alt="" />
-      <NB onHome={onHome} activeStage={1} clearedStages={[]} />
+      <NB onHome={onHome} activeStage={2} clearedStages={[1]} />
       <div className="act-prompt-bar">
         <p>이건 '사과'야. 따라 해볼까? '사과'</p>
       </div>

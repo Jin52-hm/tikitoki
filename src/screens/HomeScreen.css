@@ -97,15 +97,14 @@
 
 .home-books {
   position: absolute;
-  top: 250px;
+  top: 251px;
   left: 0;
   right: 0;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
-  overflow-y: hidden;
-  gap: 20px;
-  padding: 20px 60px;
+  gap: 40px;
+  padding: 15px 15px 15px 0;
   scroll-snap-type: x mandatory;
 }
 
@@ -113,11 +112,17 @@
   width: 387px;
   height: 387px;
   border-radius: 28px;
-  background: #d9d9d9;
   cursor: pointer;
   position: relative;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 0 10px rgba(0,0,0,0.25);
   overflow: hidden;
+  flex-shrink: 0;
+  scroll-snap-align: start;
+}
+
+.home-books::before {
+  content: '';
+  min-width: 80px;
   flex-shrink: 0;
 }
 
@@ -128,7 +133,8 @@
 .book-cover {
   width: 100%;
   height: 100%;
-  background: #d9d9d9;
+  object-fit: cover;
+  display: block;
 }
 
 .book-title {
@@ -155,4 +161,16 @@
 
 .book-level {
   font-size: 24px !important;
+}
+
+.book-card--locked {
+  cursor: default;
+}
+
+.book-card--locked::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
 }

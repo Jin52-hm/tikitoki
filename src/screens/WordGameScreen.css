@@ -259,17 +259,30 @@
   border: 4.5px solid white;
   border-radius: 999px;
   box-shadow: 0 4.5px 4.5px rgba(0, 0, 0, 0.25);
-  font-family: var(--font);
-  font-size: 32px;
-  color: white;
   cursor: pointer;
   z-index: 4;
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   gap: 8px;
   padding: 0 24px;
   animation: wg-pass-fadein 0.3s ease;
+}
+
+.wg-pass-btn-label {
+  font-family: var(--font);
+  font-size: 32px;
+  color: white;
+  white-space: nowrap;
+  line-height: normal;
+}
+
+.wg-pass-btn-arrow {
+  width: 34px;
+  height: 34px;
+  display: block;
+  flex-shrink: 0;
 }
 
 @keyframes wg-pass-fadein {

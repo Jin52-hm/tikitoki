@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './WordGameScreen.css';
 import NB from '../components/NB';
+import nextArrow from '../assets/next-arrow.svg';
 
 import apple1 from '../assets/apple-1.png';
 import apple2 from '../assets/apple-2.png';
@@ -23,6 +24,7 @@ const FEEDBACK: Record<FeedbackType, { subtitle: string; main: string; stars: st
 export default function WordGameScreen({ onHome, onNext }: { onHome: () => void; onNext: () => void }) {
   const [phase, setPhase] = useState<Phase>('teach');
   const [feedbackType, setFeedbackType] = useState<FeedbackType>('perfect');
+  const [stageCleared, setStageCleared] = useState(false);
   const [transcript, setTranscript] = useState('');
   const [failCount, setFailCount] = useState(0);
   const failCountRef = useRef(0);
@@ -116,6 +118,7 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
         stopVolumeDetection();
         if (said.includes(TARGET_WORD)) {
           resolveSuccess();
+          setStageCleared(true);
           setIsAnimating(true);
           setTimeout(() => setPhase('success'), 800);
         } else {
@@ -170,6 +173,7 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
     e.stopPropagation();
     stopRecognition();
     setFeedbackType('pass');
+    setStageCleared(true);
     setPhase('pass');
   };
 
@@ -191,7 +195,7 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
       <NB
         onHome={() => { stopRecognition(); onHome(); }}
         activeStage={1}
-        clearedStages={isCleared ? [1] : []}
+        clearedStages={stageCleared ? [1] : []}
       />
 
       {phase === 'teach' && (
@@ -240,7 +244,8 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
 
           {phase === 'fail' && failCount >= 3 && (
             <button className="wg-pass-btn" onClick={handlePass}>
-              넘어가기 →
+              <span className="wg-pass-btn-label">넘어가기</span>
+              <img className="wg-pass-btn-arrow" src={nextArrow} alt="" />
             </button>
           )}
         </>

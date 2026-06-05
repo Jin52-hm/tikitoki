@@ -9,8 +9,11 @@ import ActivityListenScreen from './screens/ActivityListenScreen'
 import ClearScreen from './screens/ClearScreen'
 import CardRewardScreen from './screens/CardRewardScreen'
 import CardCollectionScreen from './screens/CardCollectionScreen'
+import WarnBookScreen from './screens/WarnBookScreen'
+import warnBook2 from './assets/warn-book-2.png'
+import warnBook3 from './assets/warn-book-3.png'
 
-type Screen = 'splash' | 'home' | 'story' | 'word-game' | 'activity-teach' | 'activity-listen' | 'clear' | 'card-reward' | 'card-collection'
+type Screen = 'splash' | 'home' | 'story' | 'word-game' | 'activity-teach' | 'activity-listen' | 'clear' | 'card-reward' | 'card-collection' | 'warn-book-2' | 'warn-book-3'
 
 const DESIGN_W = 1194
 const DESIGN_H = 834
@@ -36,7 +39,16 @@ function App() {
 
   const screens: Record<Screen, ReactElement> = {
     'splash': <SplashScreen onNext={() => setScreen('home')} />,
-    'home': <HomeScreen onSelect={() => setScreen('story')} onCards={() => setScreen('card-collection')} />,
+    'home': <HomeScreen
+      onSelect={(i) => {
+        if (i === 0) setScreen('story')
+        else if (i === 1) setScreen('warn-book-2')
+        else if (i === 2) setScreen('warn-book-3')
+      }}
+      onCards={() => setScreen('card-collection')}
+    />,
+    'warn-book-2': <WarnBookScreen bookImage={warnBook2} onHome={() => setScreen('home')} />,
+    'warn-book-3': <WarnBookScreen bookImage={warnBook3} onHome={() => setScreen('home')} />,
     'story': (
       <StoryScreen
         onHome={goHome}

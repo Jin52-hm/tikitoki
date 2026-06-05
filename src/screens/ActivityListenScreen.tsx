@@ -5,7 +5,7 @@ export default function ActivityListenScreen({ onHome, onNext }: { onHome: () =>
   return (
     <div className="activity-listen" onClick={onNext}>
       <img className="listen-bg" src="/assets/forest-bg.png" alt="" />
-      <NB onHome={onHome} activeStage={1} clearedStages={[]} />
+      <NB onHome={onHome} activeStage={3} clearedStages={[1, 2]} />
       <div className="listen-status-bar">
         <p>듣고 있어요</p>
       </div>

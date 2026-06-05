@@ -4,6 +4,8 @@ import NB from '../components/NB';
 import Subtitle from '../components/subtitle';
 import SpeechBubble from '../components/SpeechBubble';
 import NextButton from '../components/NextButton';
+import statusIdle from '../assets/status=idle.svg';
+import statusPlay from '../assets/status=play.svg';
 
 type Bubble = {
   time: number;
@@ -329,13 +331,9 @@ export default function StoryScreen({
           </button>
           <button className="story-ctrl-btn story-ctrl-play" onClick={handlePlayPause} aria-label={isPaused ? '재생' : '일시정지'}>
             {isPaused ? (
-              <svg width="90" height="125" viewBox="0 0 90 125" fill="none">
-                <path d="M6 6L84 62.5L6 119V6Z" fill="white" style={{filter:'drop-shadow(0 0 12px rgba(0,0,0,0.4))'}}/>
-              </svg>
+              <img className="story-ctrl-icon" src={statusPlay} alt="재생" />
             ) : (
-              <div className="story-ctrl-pause-icon">
-                <span /><span />
-              </div>
+              <img className="story-ctrl-icon" src={statusIdle} alt="일시정지" />
             )}
           </button>
           <button className="story-ctrl-btn story-ctrl-seek story-ctrl-forward" onClick={handleForward} aria-label="5초 앞으로">
