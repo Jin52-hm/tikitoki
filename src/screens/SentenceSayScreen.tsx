@@ -248,12 +248,6 @@ export default function SentenceSayScreen({ onHome, onNext, onClear }: { onHome:
         </div>
       )}
 
-      <button
-        className="ss-dev-skip"
-        onClick={e => { e.stopPropagation(); stopRecognition(); onNext(); }}
-      >
-        건너뛰기 (DEV)
-      </button>
     </div>
   );
 }

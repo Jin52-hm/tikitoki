@@ -279,12 +279,6 @@ export default function WordGameScreen({ onHome, onNext, onClear }: { onHome: ()
         </>
       )}
 
-      <button
-        className="wg-dev-skip"
-        onClick={e => { e.stopPropagation(); stopRecognition(); onNext(); }}
-      >
-        건너뛰기 (DEV)
-      </button>
     </div>
   );
 }

@@ -212,7 +212,7 @@ function RecordsTab({ clearedStages, stageScores, completedStories, avgAccuracy,
 /* ---- 보호자 가이드 ---- */
 function GuideTab() {
   const activities = [
-    { icon: '🎮', title: '단어 맞추기', desc: '동화 속 단어를 듣고 올바른 그림을 고르는 활동이에요. 어휘력과 집중력을 길러줘요.' },
+    { icon: '🎮', title: '따라 말하기', desc: '보호자가 말하는 단어를 듣고 따라 말하며 말하기 자신감을 길러줘요.' },
     { icon: '🗣️', title: '단어 말하기', desc: '화면에 표시된 단어를 크고 정확하게 말해요. 발음과 말하기 자신감을 높여줘요.' },
     { icon: '💬', title: '문장 말하기', desc: '동화 속 문장을 따라 읽는 활동이에요. 표현력과 문장 구조 이해를 도와줘요.' },
   ]

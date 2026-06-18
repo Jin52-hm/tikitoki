@@ -253,12 +253,6 @@ export default function WordSayScreen({ onHome, onNext, onClear }: { onHome: () 
         </div>
       )}
 
-      <button
-        className="ws-dev-skip"
-        onClick={e => { e.stopPropagation(); stopRecognition(); onNext(); }}
-      >
-        건너뛰기 (DEV)
-      </button>
     </div>
   );
 }
