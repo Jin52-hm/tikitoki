@@ -13,14 +13,14 @@ import CardRewardScreen from './screens/CardRewardScreen'
 import CardCollectionScreen from './screens/CardCollectionScreen'
 import ParentsScreen from './screens/ParentsScreen'
 import ParentsGateModal from './screens/ParentsGateModal'
-import OnboardingScreen, { type Level } from './screens/OnboardingScreen'
+import { type Level } from './screens/OnboardingScreen'
 import WarnBookScreen from './screens/WarnBookScreen'
 import WordSayScreen from './screens/WordSayScreen'
 import SentenceSayScreen from './screens/SentenceSayScreen'
 import warnBook2 from './assets/warn-book-2.png'
 import warnBook3 from './assets/warn-book-3.png'
 
-type Screen = 'splash' | 'onboarding' | 'home' | 'story' | 'word-game' | 'word-say' | 'sentence-say' | 'activity-teach' | 'activity-listen' | 'clear' | 'card-reward' | 'card-collection' | 'warn-book-2' | 'warn-book-3' | 'parents'
+type Screen = 'splash' | 'home' | 'story' | 'word-game' | 'word-say' | 'sentence-say' | 'activity-teach' | 'activity-listen' | 'clear' | 'card-reward' | 'card-collection' | 'warn-book-2' | 'warn-book-3' | 'parents'
 
 const DESIGN_W = 1194
 const DESIGN_H = 834
@@ -86,8 +86,7 @@ const goHome = () => {
   }
 
   const screens: Record<Screen, ReactElement> = {
-    'splash': <SplashScreen onNext={() => setScreen('onboarding')} />,
-    'onboarding': <OnboardingScreen onComplete={(l) => { setLevel(l); setScreen('home') }} />,
+    'splash': <SplashScreen onNext={() => setScreen('home')} />,
     'home': <HomeScreen
       onSelect={(i) => {
         if (i === 0) setScreen('story')
