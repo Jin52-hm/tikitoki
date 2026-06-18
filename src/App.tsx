@@ -17,7 +17,6 @@ import OnboardingScreen, { type Level } from './screens/OnboardingScreen'
 import WarnBookScreen from './screens/WarnBookScreen'
 import WordSayScreen from './screens/WordSayScreen'
 import SentenceSayScreen from './screens/SentenceSayScreen'
-import TimingTool from './screens/TimingTool'
 import warnBook2 from './assets/warn-book-2.png'
 import warnBook3 from './assets/warn-book-3.png'
 
@@ -35,8 +34,7 @@ function App() {
   const [unlockedCards, setUnlockedCards] = useState<number[]>([])
   const [scale, setScale] = useState(1)
   const [showParentsGate, setShowParentsGate] = useState(false)
-  const [showTimingTool, setShowTimingTool] = useState(false)
-  const [soundOn, setSoundOn] = useState(true)
+const [soundOn, setSoundOn] = useState(true)
   const [sfxOn, setSfxOn] = useState(true)
   const bgmRef = useRef<HTMLAudioElement | null>(null)
 
@@ -82,15 +80,7 @@ function App() {
     return () => window.removeEventListener('resize', updateScale)
   }, [])
 
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key === 'T') setShowTimingTool(v => !v)
-    }
-    window.addEventListener('keydown', onKey)
-    return () => window.removeEventListener('keydown', onKey)
-  }, [])
-
-  const goHome = () => {
+const goHome = () => {
     setStoryResumeIndex(0)
     setScreen('home')
   }
@@ -148,8 +138,7 @@ function App() {
       onPointerDown={handlePointerDown}
     >
       {screens[screen]}
-      {showTimingTool && <TimingTool onClose={() => setShowTimingTool(false)} />}
-      {showParentsGate && (
+{showParentsGate && (
         <ParentsGateModal
           onConfirm={() => { setShowParentsGate(false); setScreen('parents') }}
           onClose={() => setShowParentsGate(false)}
