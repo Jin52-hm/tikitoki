@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import './WordSayScreen.css';
 import NB from '../components/NB';
 import nextArrow from '../assets/next-arrow.svg';
+import clearSfx from '../assets/sound/clear.mp3';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnySpeechRecognition = any;
@@ -161,6 +162,10 @@ export default function WordSayScreen({ onHome, onNext, onClear }: { onHome: () 
     };
   }, [phase]);
 
+  useEffect(() => {
+    if (phase === 'success') new Audio(clearSfx).play().catch(() => {});
+  }, [phase]);
+
   const handleClick = () => {
     if (phase === 'teach') {
       setPhase('listen');
@@ -206,18 +211,13 @@ export default function WordSayScreen({ onHome, onNext, onClear }: { onHome: () 
             {phase === 'listen'
               ? '듣고 있어요'
               : phase === 'fail'
-              ? (transcript ? `"${transcript}" — 다시 해볼까요? 🙂` : '잘 못 들었어요. 다시 해볼까요? 🙂')
+              ? (!transcript
+                  ? '더 크게 말해볼까요? 🎤'
+                  : isCorrect(transcript)
+                  ? '거의 다 왔어요! 조금 더 크게 말해볼까요?'
+                  : '"안녕" 또는 "토끼"라고 말해봐요!')
               : '토끼 친구를 만났어, 뭐라고 인사 해야할까?'}
           </p>
-          {phase === 'fail' && (
-            <p className="ws-fail-hint">
-              {!transcript
-                ? '더 크게 말해볼까요? 🎤'
-                : isCorrect(transcript)
-                ? '거의 다 왔어요! 조금 더 크게 말해볼까요?'
-                : '"안녕" 또는 "토끼"라고 말해봐요!'}
-            </p>
-          )}
         </div>
       )}
 

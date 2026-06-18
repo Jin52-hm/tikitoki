@@ -5,6 +5,7 @@ import nextArrow from '../assets/next-arrow.svg';
 
 import apple1 from '../assets/apple-1.png';
 import apple2 from '../assets/apple-2.png';
+import clearSfx from '../assets/sound/clear.mp3';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type AnySpeechRecognition = any;
@@ -160,6 +161,10 @@ export default function WordGameScreen({ onHome, onNext, onClear }: { onHome: ()
     };
   }, [phase]);
 
+  useEffect(() => {
+    if (phase === 'success') new Audio(clearSfx).play().catch(() => {});
+  }, [phase]);
+
   const handleClick = () => {
     if (phase === 'teach') {
       setPhase('listen');
@@ -223,18 +228,13 @@ export default function WordGameScreen({ onHome, onNext, onClear }: { onHome: ()
           <div className={`wg-info-bar ${phase === 'fail' ? 'fail' : ''}`}>
             <p>
               {phase === 'fail'
-                ? transcript ? `"${transcript}" — 다시 해볼까요? 🙂` : '잘 못 들었어요. 다시 해볼까요? 🙂'
-                : '듣고 있어요'}
-            </p>
-            {phase === 'fail' && (
-              <p className="wg-fail-hint">
-                {!transcript
+                ? !transcript
                   ? '더 크게 말해볼까요? 🎤'
                   : transcript.includes(TARGET_WORD)
                   ? '거의 다 왔어요! 조금 더 크게 말해볼까요?'
-                  : '더 또박또박 말해볼까요?'}
-              </p>
-            )}
+                  : '더 또박또박 말해볼까요?'
+                : '듣고 있어요'}
+            </p>
           </div>
 
           <img
