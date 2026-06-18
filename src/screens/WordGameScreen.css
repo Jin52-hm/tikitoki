@@ -24,11 +24,14 @@
   top: 79px;
   left: 0;
   width: 1194px;
-  height: 79px;
+  min-height: 79px;
   background: black;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 4px;
+  padding: 10px 20px;
   z-index: 2;
 }
 
@@ -42,6 +45,13 @@
 /* 실패 상태 */
 .wg-info-bar.fail {
   background: #b03030;
+}
+
+.wg-fail-hint {
+  font-family: var(--font);
+  font-size: 22px;
+  color: rgba(255, 220, 200, 0.9);
+  text-align: center;
 }
 
 /* 사과 공통 */
@@ -226,9 +236,10 @@
 
 .wg-feedback-main {
   font-family: var(--font);
-  font-size: 72px;
+  font-size: 52px;
   color: var(--green);
   line-height: 1;
+  white-space: nowrap;
 }
 
 .wg-feedback-stars {
@@ -288,4 +299,18 @@
 @keyframes wg-pass-fadein {
   from { opacity: 0; transform: translateY(8px); }
   to   { opacity: 1; transform: translateY(0); }
+}
+
+.wg-dev-skip {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 100;
 }

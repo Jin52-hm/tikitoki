@@ -21,7 +21,7 @@ const FEEDBACK: Record<FeedbackType, { subtitle: string; main: string; stars: st
   pass:      { subtitle: '괜찮아요!',         main: '다음으로 넘어가요', stars: ''       },
 };
 
-export default function WordGameScreen({ onHome, onNext }: { onHome: () => void; onNext: () => void }) {
+export default function WordGameScreen({ onHome, onNext, onClear }: { onHome: () => void; onNext: () => void; onClear?: () => void }) {
   const [phase, setPhase] = useState<Phase>('teach');
   const [feedbackType, setFeedbackType] = useState<FeedbackType>('perfect');
   const [stageCleared, setStageCleared] = useState(false);
@@ -47,6 +47,7 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
     setFeedbackType(type);
     failCountRef.current = 0;
     setFailCount(0);
+    onClear?.();
   };
 
   const startVolumeDetection = async () => {
@@ -175,6 +176,7 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
     setFeedbackType('pass');
     setStageCleared(true);
     setPhase('pass');
+    onClear?.();
   };
 
   const appleScale = phase === 'listen' && !isAnimating ? 1 + volume * 0.08 : 1;
@@ -224,6 +226,15 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
                 ? transcript ? `"${transcript}" — 다시 해볼까요? 🙂` : '잘 못 들었어요. 다시 해볼까요? 🙂'
                 : '듣고 있어요'}
             </p>
+            {phase === 'fail' && (
+              <p className="wg-fail-hint">
+                {!transcript
+                  ? '더 크게 말해볼까요? 🎤'
+                  : transcript.includes(TARGET_WORD)
+                  ? '거의 다 왔어요! 조금 더 크게 말해볼까요?'
+                  : '더 또박또박 말해볼까요?'}
+              </p>
+            )}
           </div>
 
           <img
@@ -267,6 +278,13 @@ export default function WordGameScreen({ onHome, onNext }: { onHome: () => void;
           </div>
         </>
       )}
+
+      <button
+        className="wg-dev-skip"
+        onClick={e => { e.stopPropagation(); stopRecognition(); onNext(); }}
+      >
+        건너뛰기 (DEV)
+      </button>
     </div>
   );
 }
