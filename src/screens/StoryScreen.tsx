@@ -23,158 +23,99 @@ const stories = [
   {
     video: '/assets/videos/story1.mp4',
     subtitles: [
-      { time: 0, text: '학교가 끝나고 루비는 걷기 시작했어요.' },
-      { time: 3, text: '오늘따라 하늘이 유독 파랗게 느껴졌어요.' },
-      { time: 6, text: '루비는 발걸음을 멈추고 하늘을 올려다봤어요.' },
+      { time: 0, text: '학교가 끝났지만,' },
+      {time: 1.6, text: '루비는 바로 집으로 가지 않았어요.' },
+      { time: 5, text: '엄마는 늘  바쁘고,' },
+      { time: 6, text: '오늘은 함께 놀 친구도 없었거든요.' },
     ],
-    bubbles: [
-      {
-        time: 2, duration: 3,
-        text: '아.. 심심해.\n뭐 재미있는 일 없을까?',
-        top: '25%', left: '52%',
-        tailRotation: -150,
-        tailBottom: -25,
-        tailLeft: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
   },
   {
     video: '/assets/videos/story2.mp4',
     subtitles: [
-      { time: 0, text: '공원 벤치에 친구 민지가 앉아 있었어요.' },
-      { time: 3, text: '민지는 루비를 보자마자 손을 흔들었어요.' },
+      { time: 0, text: '숲을 걷던 루비는' },
+      { time: 2, text: '반짝반짝 빛나는 무언가를 발견했어요.' },
+      { time: 6, text: '고개를 들어 보니,' },
+      { time: 8, text: '나무에 새빨간 사과 하나가 달려 있었어요.' },
     ],
-    bubbles: [
-      {
-        time: 3, duration: 3,
-        text: '루비야~! 여기야!',
-        top: '25%', left: '10%',
-        tailRotation: -20,
-        tailBottom: -35,
-        tailRight: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
   },
   {
     video: '/assets/videos/story3.mp4',
     subtitles: [
-      { time: 0, text: '두 아이는 신나게 그네를 타기 시작했어요.' },
-      { time: 4, text: '웃음소리가 공원 가득 퍼져 나갔어요.' },
+      { time: 0, text: '우와! 빨간 사과다!' },
     ],
-    bubbles: [
-      {
-        time: 1, duration: 3,
-        text: '더 높이! 더 높이!',
-        top: '20%', left: '10%',
-        tailRotation: -160,
-        tailBottom: -35,
-        tailLeft: 20,
-      },
-      {
-        time: 4, duration: 3,
-        text: '하하하!',
-        top: '20%', left: '55%',
-        tailRotation: -20,
-        tailBottom: -35,
-        tailRight: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
   },
+
   {
     video: '/assets/videos/story4.mp4',
     subtitles: [
-      { time: 0, text: '해가 지기 시작하자 민지가 말했어요.' },
-      { time: 3, text: '"나 이제 집에 가야 해. 잘 가, 루비야!"' },
+      { time: 0, text: '루비는 엄마에게 빨간 사과를 보여주고 싶어' },
+      { time: 3.5, text: '한달음에 집으로 달려왔어요.' },
+      { time: 6, text: ' ' },
+     
     ],
-    bubbles: [
-      {
-        time: 3, duration: 4,
-        text: '나 이제 집에 가야 해.\n잘 가, 루비야!',
-        top: '25%', left: '10%',
-        tailRotation: -20,
-        tailBottom: -35,
-        tailRight: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
   },
   {
     video: '/assets/videos/story5.mp4',
     subtitles: [
-      { time: 0, text: '루비는 혼자 남아 하늘을 바라보았어요.' },
-      { time: 3, text: '노을빛이 온 하늘을 물들이고 있었어요.' },
-      { time: 6, text: '루비는 아름답다고 생각했어요.' },
+       { time: 0, text: '엄마는 루비가 다칠까 걱정이 되어' },
+      { time: 3, text: '목소리가 커졌어요.' },
+      { time: 4.5, text: '루비는 속상한 마음에 집을 뛰쳐 나갔어요.' },
     ],
     bubbles: [
-      {
-        time: 6, duration: 4,
-        text: '와.. 정말 예쁘다.',
-        top: '25%', left: '52%',
-        tailRotation: -160,
-        tailBottom: -35,
-        tailLeft: 20,
-      },
+      
     ] as Bubble[],
   },
   {
     video: '/assets/videos/story6.mp4',
     subtitles: [
-      { time: 0, text: '그때 루비의 가방에서 작은 소리가 들렸어요.' },
-      { time: 3, text: '삐빅— 휴대폰 알림 소리였어요.' },
-      { time: 5, text: '"루비야, 밥 먹으러 와!" 엄마의 문자였어요.' },
+      { time: 0, text: '숲속을 걷던 루비는' },
+      { time: 2.3, text: '풀숲에 숨어있는 토끼를 발견했어요.' },
+      { time: 6.5, text: '루비는 토끼를 보고 조심스럽게 인사했어요.' },
     ],
     bubbles: [] as Bubble[],
   },
   {
     video: '/assets/videos/story7.mp4',
     subtitles: [
-      { time: 0, text: '루비는 서둘러 집으로 달려갔어요.' },
-      { time: 3, text: '바람이 루비의 머리카락을 간질였어요.' },
+      { time: 0, text: '토끼와 친구가 된 루비는 ' },
+      { time: 2.8, text: '토끼에게 사과를 보여주고 싶었어요' },
+      { time: 5.7, text: '신나게 달려가던 순간' },
+      { time: 7.8, text: '발 밑이 푹 꺼지고 말았어요.' },
     ],
-    bubbles: [
-      {
-        time: 1, duration: 3,
-        text: '빨리 가야지!',
-        top: '25%', left: '52%',
-        tailRotation: -160,
-        tailBottom: -35,
-        tailLeft: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
   },
   {
     video: '/assets/videos/story8.mp4',
     subtitles: [
-      { time: 0, text: '현관문을 열자 엄마가 반갑게 맞아주었어요.' },
-      { time: 3, text: '"우리 루비 왔네~ 오늘 재미있었어?"' },
+      { time: 0, text: '토끼는 도와달라 소리쳤고,' },
+      { time: 2.8, text: '토끼의 외침을 들은 엄마는' },
+      { time: 5, text: '헐레벌떡 달려왔어요.' },
     ],
-    bubbles: [
-      {
-        time: 3, duration: 4,
-        text: '우리 루비 왔네~\n오늘 재미있었어?',
-        top: '25%', left: '10%',
-        tailRotation: -20,
-        tailBottom: -35,
-        tailRight: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
   },
   {
     video: '/assets/videos/story9.mp4',
     subtitles: [
-      { time: 0, text: '루비는 엄마 품에 안겨 오늘 하루를 이야기했어요.' },
-      { time: 4, text: '엄마는 루비의 이야기를 들으며 미소 지었어요.' },
-      { time: 7, text: '오늘도 행복한 하루였어요.' },
+      { time: 0, text: '루비는 무사히 구출되었어요.' },
+      { time: 3.7, text: '엄마는 떨리는 마음으로 루비를 안아주었고,' },
+      { time: 7.5, text: '루비도 엄마 품이 폭 안겨' },
+      { time: 9.6, text: '마음을 놓았어요.' },
     ],
-    bubbles: [
-      {
-        time: 1, duration: 5,
-        text: '엄마! 오늘 민지랑\n그네 탔어!',
-        top: '25%', left: '52%',
-        tailRotation: -160,
-        tailBottom: -35,
-        tailLeft: 20,
-      },
-    ] as Bubble[],
+    bubbles: [] as Bubble[],
+  },
+  {
+    video: '/assets/videos/story10.mp4',
+    subtitles: [
+      { time: 0, text: '그날 이후, 루비와 엄마는' },
+      { time: 2.7, text: '서로를 더 깊이 이해하게 되었고,' },
+      { time: 5.5, text: '빛을 되찾은 숲에는' },
+      { time: 7.5, text: '다시 따뜻한 웃음소리가 가득해졌답니다.' },
+    ],
+    bubbles: [] as Bubble[],
   },
 ];
 
@@ -182,12 +123,18 @@ export default function StoryScreen({
   onHome,
   onNext,
   onMiniGame,
+  onWordSay,
+  onSentenceSay,
   startIndex = 0,
+  clearedStages = [],
 }: {
   onHome: () => void;
   onNext: () => void;
   onMiniGame?: () => void;
+  onWordSay?: () => void;
+  onSentenceSay?: () => void;
   startIndex?: number;
+  clearedStages?: number[];
 }) {
   const [currentIndex, setCurrentIndex] = useState(startIndex);
   const [currentSubtitle, setCurrentSubtitle] = useState('');
@@ -197,26 +144,43 @@ export default function StoryScreen({
   const [rewindKey, setRewindKey] = useState(0);
   const [forwardKey, setForwardKey] = useState(0);
   const [videoEnded, setVideoEnded] = useState(false);
+  const videoEndedRef = useRef(false);
+  const [soundEnabled, setSoundEnabled] = useState(true);
+  const soundEnabledRef = useRef(true);
+  const [showNarrationIntro, setShowNarrationIntro] = useState(false);
+  const [manualSubIdx, setManualSubIdx] = useState(0);
+  const manualLoopRef = useRef<{ start: number; end: number | null } | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const autoHideRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const current = stories[currentIndex];
+  const displayedSubtitle = soundEnabled ? currentSubtitle : (current.subtitles[manualSubIdx]?.text ?? '');
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
 
     const handleTimeUpdate = () => {
+      // 나레이션 OFF: 현재 자막 구간 끝에 도달하면 구간 시작으로 loop
+      if (manualLoopRef.current) {
+        const { start, end } = manualLoopRef.current;
+        if (end !== null && video.currentTime >= end) {
+          video.currentTime = start;
+          return;
+        }
+        return; // 루프 중엔 자막/버블 자동 갱신 불필요
+      }
+
       const t = video.currentTime;
 
       let matchedSub = '';
-      for (const sub of current.subtitles) {
+      for (const sub of (current.subtitles ?? [])) {
         if (t >= sub.time) matchedSub = sub.text;
       }
       setCurrentSubtitle(matchedSub);
 
       let matchedBubble: Bubble | null = null;
-      for (const bubble of current.bubbles) {
+      for (const bubble of (current.bubbles ?? [])) {
         if (t >= bubble.time && t < bubble.time + bubble.duration) {
           matchedBubble = bubble;
         }
@@ -224,7 +188,18 @@ export default function StoryScreen({
       setCurrentBubble(matchedBubble);
     };
 
-    const handleEnded = () => setVideoEnded(true);
+    const handleEnded = () => {
+      if (manualLoopRef.current) {
+        video.currentTime = manualLoopRef.current.start;
+        video.play().catch(() => {});
+      } else {
+        if (video.duration > 0.5) {
+          video.currentTime = video.duration - 0.5;
+        }
+        videoEndedRef.current = true;
+        setVideoEnded(true);
+      }
+    };
 
     video.addEventListener('timeupdate', handleTimeUpdate);
     video.addEventListener('ended', handleEnded);
@@ -239,9 +214,48 @@ export default function StoryScreen({
     setCurrentBubble(null);
     setIsPaused(false);
     setShowControls(false);
+    videoEndedRef.current = false;
     setVideoEnded(false);
-    videoRef.current?.play();
+    setManualSubIdx(0);
+    // 나레이션 OFF면 첫 자막 구간 루프 세팅, ON이면 초기화
+    if (!soundEnabledRef.current) {
+      manualLoopRef.current = {
+        start: current.subtitles[0]?.time ?? 0,
+        end: current.subtitles[1]?.time ?? null,
+      };
+    } else {
+      manualLoopRef.current = null;
+    }
+    const video = videoRef.current;
+    if (!video) return;
+    video.muted = !soundEnabledRef.current;
+    video.play().catch(() => {
+      // 브라우저가 소리 있는 자동재생 차단 시 음소거로 폴백
+      video.muted = true;
+      soundEnabledRef.current = false;
+      setSoundEnabled(false);
+      video.play().catch(() => {});
+    });
   }, [currentIndex]);
+
+  // 나레이션 OFF: 자막 인덱스가 바뀔 때마다 해당 구간으로 seek하고 loop 구간 갱신
+  useEffect(() => {
+    if (soundEnabled) {
+      manualLoopRef.current = null;
+      return;
+    }
+    const sub = current.subtitles[manualSubIdx];
+    if (!sub) {
+      manualLoopRef.current = null;
+      return;
+    }
+    const nextSub = current.subtitles[manualSubIdx + 1];
+    manualLoopRef.current = { start: sub.time, end: nextSub?.time ?? null };
+    const video = videoRef.current;
+    if (!video) return;
+    video.currentTime = sub.time;
+    video.play().catch(() => {});
+  }, [manualSubIdx, soundEnabled]);
 
   const hideControls = useCallback(() => {
     if (autoHideRef.current) clearTimeout(autoHideRef.current);
@@ -251,6 +265,22 @@ export default function StoryScreen({
   }, []);
 
   const handleScreenClick = () => {
+    if (showNarrationIntro) {
+      setShowNarrationIntro(false);
+      return;
+    }
+    if (!soundEnabled) {
+      if (manualSubIdx < current.subtitles.length - 1) {
+        setManualSubIdx(prev => prev + 1);
+      } else {
+        goNext();
+      }
+      return;
+    }
+    if (videoEndedRef.current) {
+      goNext();
+      return;
+    }
     if (showControls) {
       hideControls();
       return;
@@ -301,15 +331,43 @@ export default function StoryScreen({
     }
   };
 
-  const handleNext = (e: React.MouseEvent) => {
+  const handleSoundToggle = (e: React.MouseEvent) => {
     e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    const newEnabled = !soundEnabledRef.current;
+    soundEnabledRef.current = newEnabled;
+    video.muted = !newEnabled;
+    setSoundEnabled(newEnabled);
+    if (!newEnabled) {
+      const t = video.currentTime;
+      let idx = 0;
+      for (let i = 0; i < current.subtitles.length; i++) {
+        if (t >= current.subtitles[i].time) idx = i;
+      }
+      setManualSubIdx(idx);
+      setShowControls(false);
+      setShowNarrationIntro(true);
+    }
+  };
+
+  const goNext = () => {
     if (currentIndex === 1 && onMiniGame) {
       onMiniGame();
+    } else if (currentIndex === 5 && onWordSay) {
+      onWordSay();
+    } else if (currentIndex === 8 && onSentenceSay) {
+      onSentenceSay();
     } else if (currentIndex < stories.length - 1) {
       setCurrentIndex(currentIndex + 1);
     } else {
       onNext();
     }
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    goNext();
   };
 
   return (
@@ -343,10 +401,10 @@ export default function StoryScreen({
         </div>
       )}
 
-      <NB onHome={onHome} activeStage={1} clearedStages={[]} compact={true} />
-      <Subtitle text={currentSubtitle} />
+      <NB onHome={onHome} activeStage={1} clearedStages={clearedStages} compact={true} narrationOn={soundEnabled} onNarrationToggle={handleSoundToggle} />
+      <Subtitle text={displayedSubtitle} />
 
-      {currentBubble && (
+      {currentBubble && soundEnabled && (
         <SpeechBubble
           text={currentBubble.text}
           top={currentBubble.top}
@@ -367,12 +425,26 @@ export default function StoryScreen({
         ))}
       </div>
 
-      {videoEnded && (
+      {!soundEnabled && !showNarrationIntro && manualSubIdx === 0 && (
+        <div className="story-tap-hint">탭하여 다음으로 ▶</div>
+      )}
+
+      {soundEnabled && videoEnded && (
         <div className="story-next-wrap">
           <NextButton
             onClick={handleNext}
             label={currentIndex === stories.length - 1 ? '완료' : '다음'}
           />
+        </div>
+      )}
+
+      {showNarrationIntro && (
+        <div className="story-narration-intro" onClick={e => e.stopPropagation()}>
+          <div className="story-narration-intro-card">
+            <p className="story-narration-intro-title">직접 읽어주기 모드</p>
+            <p className="story-narration-intro-desc">보호자가 직접 읽어주는 모드예요<br />화면을 탭하면 다음 문장으로 넘어가요</p>
+            <NextButton label="확인" showArrow={false} onClick={() => setShowNarrationIntro(false)} />
+          </div>
         </div>
       )}
     </div>

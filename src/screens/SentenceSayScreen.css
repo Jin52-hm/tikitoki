@@ -1,0 +1,170 @@
+.sentence-say {
+  width: 1194px;
+  height: 834px;
+  position: relative;
+  background: #1a1a1a;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.ss-bg {
+  position: absolute;
+  left: -40px;
+  top: 118px;
+  width: 1273px;
+  height: 716px;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.ss-success-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.ss-prompt-bar {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  width: 1194px;
+  min-height: 79px;
+  background: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  z-index: 3;
+  padding: 10px 20px;
+}
+
+.ss-prompt-bar p {
+  font-family: var(--font);
+  font-size: 32px;
+  color: #d7d7d7;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.ss-prompt-bar.fail {
+  background: #b03030;
+}
+
+.ss-fail-hint {
+  font-family: var(--font);
+  font-size: 22px;
+  color: rgba(255, 220, 200, 0.9);
+  text-align: center;
+}
+
+.ss-tap-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font);
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  z-index: 3;
+  white-space: nowrap;
+}
+
+.ss-pass-btn {
+  position: absolute;
+  right: 70px;
+  bottom: 45px;
+  width: 218px;
+  height: 80px;
+  background: #fd97d5;
+  border: 4.5px solid white;
+  border-radius: 999px;
+  box-shadow: 0 4.5px 4.5px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 24px;
+  animation: ss-pass-fadein 0.3s ease;
+}
+
+.ss-pass-btn-label {
+  font-family: var(--font);
+  font-size: 32px;
+  color: white;
+  white-space: nowrap;
+}
+
+.ss-pass-btn-arrow {
+  width: 34px;
+  height: 34px;
+  display: block;
+  flex-shrink: 0;
+}
+
+@keyframes ss-pass-fadein {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.ss-feedback-card {
+  position: absolute;
+  left: 50%;
+  top: 336px;
+  transform: translateX(-50%);
+  width: 600px;
+  background: var(--bg-yellow);
+  border: 10px solid var(--yellow);
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 40px 60px;
+  z-index: 3;
+  text-align: center;
+}
+
+.ss-feedback-card--pass {
+  width: 817px;
+  top: 300px;
+  gap: 20px;
+  padding: 50px 80px;
+}
+
+.ss-feedback-subtitle {
+  font-family: var(--font);
+  font-size: 24px;
+  color: black;
+}
+
+.ss-feedback-main {
+  font-family: var(--font);
+  font-size: 52px;
+  color: var(--green);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.ss-feedback-stars {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.ss-dev-skip {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  padding: 6px 14px;
+  background: rgba(0, 0, 0, 0.45);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  z-index: 100;
+}

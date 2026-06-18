@@ -1,0 +1,476 @@
+/* ── Layout ── */
+.onboarding {
+  width: 1194px;
+  height: 834px;
+  background: linear-gradient(140deg, #d8f5f5 0%, #ede5ff 55%, #fde4f9 100%);
+  display: flex;
+  flex-direction: column;
+}
+
+.ob-header {
+  height: 68px;
+  flex-shrink: 0;
+  padding: 18px 64px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ob-progress {
+  height: 10px;
+  background: rgba(255,255,255,0.55);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.ob-progress-fill {
+  height: 100%;
+  background: var(--blue);
+  border-radius: 999px;
+  transition: width 0.4s ease;
+}
+
+.ob-step-text {
+  font-family: var(--font);
+  font-size: 16px;
+  color: rgba(0,0,0,0.38);
+  text-align: right;
+}
+
+.ob-body {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 80px;
+}
+
+.ob-card {
+  background: white;
+  border-radius: 32px;
+  padding: 40px 56px;
+  width: 720px;
+  box-shadow: 0 10px 56px rgba(0,0,0,0.13);
+}
+
+.ob-card--welcome {
+  width: 760px;
+  text-align: center;
+}
+
+.ob-footer {
+  height: 88px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* ── Buttons ── */
+.ob-btn {
+  padding: 14px 56px;
+  border-radius: 999px;
+  font-family: var(--font);
+  font-size: 26px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s;
+}
+
+.ob-btn--next {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 4px 18px rgba(0,208,212,0.42);
+}
+
+.ob-btn--next:hover:not(:disabled) {
+  background: #00b8bc;
+}
+
+.ob-btn--disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.ob-btn--back {
+  background: white;
+  color: #999;
+  border: 2px solid #ddd;
+}
+
+.ob-btn--skip {
+  background: transparent;
+  color: #bbb;
+  border: none;
+  box-shadow: none;
+  font-size: 20px;
+  padding: 14px 24px;
+  position: absolute;
+  right: 60px;
+}
+
+/* ── Welcome ── */
+.ob-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.ob-welcome-emoji { font-size: 72px; line-height: 1; }
+
+.ob-welcome-title {
+  font-family: var(--font);
+  font-size: 34px;
+  color: #333;
+}
+
+.ob-welcome-sub {
+  font-family: var(--font);
+  font-size: 22px;
+  color: #999;
+  line-height: 1.65;
+}
+
+.ob-welcome-tags {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ob-tag {
+  background: #eafaff;
+  color: var(--blue);
+  font-family: var(--font);
+  font-size: 18px;
+  padding: 8px 22px;
+  border-radius: 999px;
+  border: 2px solid #c8f0f2;
+}
+
+/* ── Question wrapper ── */
+.ob-q-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.ob-q-num {
+  font-family: var(--font);
+  font-size: 19px;
+  color: var(--blue);
+}
+
+.ob-q-text {
+  font-family: var(--font);
+  font-size: 30px;
+  color: #333;
+  line-height: 1.38;
+}
+
+.ob-hint {
+  font-family: var(--font);
+  font-size: 18px;
+  color: #bbb;
+  margin-top: -4px;
+}
+
+/* ── Choices grid ── */
+.ob-choices {
+  display: grid;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.ob-choices--2 { grid-template-columns: 1fr 1fr; }
+.ob-choices--3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.ob-choice {
+  padding: 18px 16px;
+  border-radius: 16px;
+  border: 3px solid #e2e2e2;
+  background: white;
+  font-family: var(--font);
+  font-size: 22px;
+  color: #666;
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: center;
+}
+
+.ob-choice:hover { border-color: var(--blue); color: var(--blue); }
+
+.ob-choice--selected {
+  background: #e5fafa;
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+/* ── Age counter ── */
+.age-counter {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.age-btn {
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  border: 3px solid #ddd;
+  background: white;
+  font-size: 32px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  transition: all 0.15s;
+  line-height: 1;
+}
+
+.age-btn:hover { border-color: var(--blue); color: var(--blue); }
+
+.age-display {
+  font-family: var(--font);
+  font-size: 58px;
+  color: var(--blue);
+  min-width: 130px;
+  text-align: center;
+}
+
+/* ── Speaking level options ── */
+.ob-levels {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 6px;
+}
+
+.ob-level-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 22px;
+  border-radius: 16px;
+  border: 3px solid #e2e2e2;
+  background: white;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s;
+  width: 100%;
+}
+
+.ob-level-btn:hover { border-color: var(--blue); }
+
+.ob-level-btn--selected {
+  background: #e5fafa;
+  border-color: var(--blue);
+}
+
+.ob-level-emoji { font-size: 36px; line-height: 1; flex-shrink: 0; }
+
+.ob-level-text {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.ob-level-label {
+  font-family: var(--font);
+  font-size: 22px;
+  color: #333;
+}
+
+.ob-level-btn--selected .ob-level-label { color: var(--blue); }
+
+.ob-level-desc {
+  font-family: var(--font);
+  font-size: 16px;
+  color: #bbb;
+}
+
+/* ── Tests ── */
+.ob-test-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.ob-test-label {
+  font-family: var(--font);
+  font-size: 28px;
+  color: #333;
+  align-self: flex-start;
+}
+
+.ob-test-sub {
+  font-family: var(--font);
+  font-size: 21px;
+  color: #999;
+  align-self: flex-start;
+}
+
+.ob-audio-chip {
+  background: var(--blue);
+  color: white;
+  font-family: var(--font);
+  font-size: 22px;
+  padding: 10px 28px;
+  border-radius: 999px;
+  align-self: flex-start;
+}
+
+.ob-animal-cards {
+  display: flex;
+  gap: 28px;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.ob-animal-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 22px 36px;
+  border-radius: 22px;
+  border: 4px solid #e0e0e0;
+  background: white;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.ob-animal-card:hover { border-color: var(--blue); }
+.ob-animal-card--correct { background: #eafff4; border-color: var(--green) !important; }
+.ob-animal-card--wrong   { background: #fff2f2; border-color: #ff8888 !important; }
+
+.ob-animal-emoji { font-size: 54px; line-height: 1; }
+.ob-animal-label { font-family: var(--font); font-size: 20px; color: #666; }
+
+.ob-feedback {
+  font-family: var(--font);
+  font-size: 24px;
+}
+
+.ob-feedback--good { color: var(--green); }
+.ob-feedback--try  { color: #ff8888; }
+
+/* Speak test */
+.ob-speak-word {
+  font-family: var(--font);
+  font-size: 62px;
+  color: #333;
+  background: #f6f6f6;
+  padding: 20px 64px;
+  border-radius: 20px;
+  margin: 4px 0;
+}
+
+.ob-mic-btn {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pink);
+  font-size: 38px;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(255,107,197,0.38);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ob-mic-btn--listening {
+  background: var(--yellow);
+  animation: ob-pulse 0.7s infinite;
+}
+
+.ob-mic-btn--done {
+  background: var(--green);
+  color: white;
+  font-size: 32px;
+}
+
+@keyframes ob-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.12); }
+}
+
+.ob-listen-anim {
+  font-family: var(--font);
+  font-size: 21px;
+  color: var(--yellow);
+}
+
+/* ── Result ── */
+.ob-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.ob-result-badge {
+  font-family: var(--font);
+  font-size: 36px;
+  color: white;
+  padding: 14px 60px;
+  border-radius: 999px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.14);
+}
+
+.ob-result-speech {
+  font-family: var(--font);
+  font-size: 32px;
+  color: #333;
+}
+
+.ob-result-msg {
+  font-family: var(--font);
+  font-size: 21px;
+  color: #aaa;
+}
+
+.ob-result-table {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+.ob-result-row {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  background: #f7f7f7;
+  border-radius: 12px;
+}
+
+.ob-result-key {
+  font-family: var(--font);
+  font-size: 19px;
+  color: #999;
+  flex: 1;
+}
+
+.ob-result-val {
+  font-family: var(--font);
+  font-size: 21px;
+}
+
+.ob-result-note {
+  font-family: var(--font);
+  font-size: 17px;
+  color: #ccc;
+  margin-top: 4px;
+}

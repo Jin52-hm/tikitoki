@@ -1,16 +1,19 @@
 import './NB.css'
 import homeBtn from '../assets/home-button.svg'
+import readBtn from '../assets/read-button.svg'
 
 type NBProps = {
   onHome: () => void
   activeStage: 1 | 2 | 3
   clearedStages?: number[]
   compact?: boolean
+  narrationOn?: boolean
+  onNarrationToggle?: (e: React.MouseEvent) => void
 }
 
 const stageLabels = ['따라말하기', '단어말하기', '문장말하기']
 
-export default function NB({ onHome, activeStage, clearedStages = [], compact = false }: NBProps) {
+export default function NB({ onHome, activeStage, clearedStages = [], compact = false, narrationOn, onNarrationToggle }: NBProps) {
   const getStageContent = (s: number, i: number) => {
     if (clearedStages.includes(s)) return '⭐️'
     if (!compact && activeStage === s) return `${s}. ${stageLabels[i]}`
@@ -36,6 +39,17 @@ export default function NB({ onHome, activeStage, clearedStages = [], compact = 
           ))}
         </div>
       </div>
+      {onNarrationToggle !== undefined && (
+        <div className="nb-right">
+          <button
+            className={`nb-read-btn ${narrationOn ? 'on' : 'off'}`}
+            onClick={(e) => { e.stopPropagation(); onNarrationToggle(e); }}
+            aria-label={narrationOn ? '읽어주기 모드 끄기' : '읽어주기 모드 켜기'}
+          >
+            <img src={readBtn} alt="읽어주기 모드" />
+          </button>
+        </div>
+      )}
     </div>
   )
 }

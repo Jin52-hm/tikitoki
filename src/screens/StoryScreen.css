@@ -162,6 +162,85 @@
   background-color: rgba(255, 255, 255, 0.75);
 }
 
+/* 소리 토글 버튼 */
+.story-sound-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 48px;
+  z-index: 20;
+  background: rgba(0, 0, 0, 0.45);
+  border: none;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: all;
+}
+
+/* 읽어주기 모드 안내 오버레이 */
+.story-narration-intro {
+  position: absolute;
+  top: 79px;
+  left: 0;
+  width: 1194px;
+  height: 755px;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.story-narration-intro-card {
+  background: #ffffff;
+  border-radius: 28px;
+  width: 720px;
+  padding: 48px 48px 44px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.story-narration-intro-title {
+  font-family: var(--font);
+  font-size: 40px;
+  color: #222222;
+  text-align: center;
+  font-weight: 900;
+}
+
+.story-narration-intro-desc {
+  font-family: var(--font);
+  font-size: 32px;
+  color: #666666;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+/* 나레이션 OFF 모드 - 탭 안내 */
+.story-tap-hint {
+  position: absolute;
+  bottom: 28px;
+  right: 56px;
+  z-index: 20;
+  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font);
+  font-size: 22px;
+  pointer-events: none;
+  animation: tapPulse 1.6s ease-in-out infinite;
+}
+
+@keyframes tapPulse {
+  0%, 100% { opacity: 0.5; transform: translateX(0); }
+  50%       { opacity: 1;   transform: translateX(5px); }
+}
+
 /* 다음 버튼 래퍼 */
 .story-next-wrap {
   position: absolute;

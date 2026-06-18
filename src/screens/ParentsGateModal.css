@@ -1,0 +1,116 @@
+.gate-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 200;
+}
+
+.gate-card {
+  background: white;
+  border-radius: 32px;
+  padding: 40px 45px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 540px;
+  position: relative;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.25);
+}
+
+.gate-close {
+  position: absolute;
+  top: 18px;
+  right: 22px;
+  width: 38px;
+  height: 38px;
+  border: none;
+  background: #f0f0f0;
+  border-radius: 50%;
+  font-size: 16px;
+  color: #888;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gate-icon {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.gate-title {
+  font-family: var(--font);
+  font-size: 34px;
+  font-weight: 400;
+  color: #333;
+  margin: 0;
+}
+
+.gate-desc {
+  font-family: var(--font);
+  font-size: 20px;
+  color: #999;
+  margin: 0;
+}
+
+.gate-problem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #f7f7f7;
+  padding: 18px 36px;
+  border-radius: 20px;
+  font-family: var(--font);
+  font-size: 48px;
+  color: #333;
+  width: 100%;
+  justify-content: center;
+}
+
+.gate-op { color: #FF6BC5; }
+.gate-eq { color: #bbb; }
+.gate-q  { color: #FF6BC5; }
+
+.gate-error {
+  font-family: var(--font);
+  font-size: 18px;
+  color: #ff4d4d;
+  margin: 0;
+  height: 30px;
+}
+
+.gate-error--hidden {
+  visibility: hidden;
+}
+
+/* 선택지 가로 4개 */
+.gate-choices {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  width: 100%;
+  margin-top: -8px;
+}
+
+.gate-choice {
+  height: 84px;
+  border: none;
+  border-radius: 32px;
+  font-family: var(--font);
+  font-size: 36px;
+  color: white;
+  background: #FF6BC5;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(255,107,197,0.3);
+  transition: transform 0.1s, opacity 0.1s;
+}
+
+.gate-choice:active {
+  transform: scale(0.95);
+  opacity: 0.85;
+}
